@@ -9,4 +9,6 @@ public interface FetchCoinInfoService {
     CurrentCoinInfo fetchCoinInfo(String coinName);
 
     List<ApiResponseCoinData> save(List<ApiResponseCoinData> list);
+
+    List<ApiResponseCoinData> getLastData();
 }

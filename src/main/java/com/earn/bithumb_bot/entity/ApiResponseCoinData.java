@@ -28,5 +28,5 @@ public class ApiResponseCoinData extends Time{
     private String closingPrice;
 
     @JsonProperty("fluctate_rate_24H")
-    private String fluctateRate;
+    private Double fluctateRate;
 }

@@ -36,4 +36,9 @@ public class FetchCoinInfoServiceImpl implements FetchCoinInfoService{
     public List<ApiResponseCoinData> save(List<ApiResponseCoinData> list) {
         return apiResponseCoinDataRepository.saveAll(list);
     }
+
+    @Override
+    public List<ApiResponseCoinData> getLastData() {
+        return apiResponseCoinDataRepository.getLastPrice();
+    }
 }

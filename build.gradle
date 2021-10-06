@@ -29,6 +29,10 @@ dependencies {
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'com.slack.api:slack-app-backend:1.6.2'
+    implementation 'com.slack.api:slack-api-model:1.6.2'
+    implementation 'com.slack.api:slack-api-client:1.6.2'
+    implementation 'com.squareup.okhttp3:okhttp:4.8.1'
 
     //query log
     implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.6.2'
