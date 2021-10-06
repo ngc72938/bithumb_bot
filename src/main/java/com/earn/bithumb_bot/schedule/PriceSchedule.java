@@ -45,7 +45,6 @@ public class PriceSchedule {
             lastData.forEach(lastInfo ->{
                 if(currentInfo.getName().equals(lastInfo.getName())){
                     double diff = currentInfo.getFluctateRate() - lastInfo.getFluctateRate();
-                    System.out.println(Math.round(diff*100)/100.00);
                     double roundDiff = Math.round(diff*100)/100.00;
                     if(roundDiff > 3){
                         sendWebhook(currentInfo.getName()+" :: "+roundDiff);
@@ -57,12 +56,9 @@ public class PriceSchedule {
 
     void sendWebhook(String text){
         try {
-            WebhookResponse response = null;
             Slack slack = Slack.getInstance();
             Payload payload = Payload.builder().text(text).build();
-            response = slack.send(webhookUrl, payload);
-
-            System.out.println(response);
+            slack.send(webhookUrl, payload);
         } catch (IOException e) {
             e.printStackTrace();
         }
