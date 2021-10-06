@@ -3,9 +3,23 @@ package com.earn.bithumb_bot.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
-public class ApiResponseCoinData {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Getter
+@Setter
+@Table(name = "api_response_coin_data")
+public class ApiResponseCoinData extends Time{
+    @Id
+    @GeneratedValue
+    private Long id;
+
     private String name;
 
     @JsonProperty("opening_price")
@@ -16,6 +30,4 @@ public class ApiResponseCoinData {
 
     @JsonProperty("fluctate_rate_24H")
     private String fluctateRate;
-
-
 }
