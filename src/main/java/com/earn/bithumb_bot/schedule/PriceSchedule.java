@@ -24,11 +24,15 @@ public class PriceSchedule {
     @Value("${slack.webhook.url}")
     private String webhookUrl;
 
-    @Scheduled(cron = "*/50 * * * * *")
+    @Scheduled(cron = "*/10 * * * * *")
     public void savePrice(){
         String[] targetCoinList = {
-                "BTC","ETH","KLAY","XEC","XTZ","QTUM","OMG","PCI","DOT","WEMIX","DOGE","XRP","XNO","HIVE","EVZ","XLM","UNI",
-                "AXS","LTC","ADA","EOS","SOL","LUNA","AERGO","ORC","ONG","SRM","SAND","XEM","PUNDIX"
+                "BTC","ETH","KLAY","XEC","XTZ","QTUM","OMG","PCI","DOT","WEMIX",
+                "DOGE","XRP","XNO","HIVE","EVZ","XLM","UNI", "AXS","LTC","ADA",
+                "EOS","SOL","LUNA","AERGO","ORC","ONG","SRM","SAND","XEM","PUNDIX",
+                "LF","ETC","SOL","LUNA","STEEM","LINK","TRX","BLY","ATOM","MTL",
+                "SRM","WAXP","SXP","LOOM","VET","FCT","XPR","MVC","BORA","ICX"
+
         };
         List<ApiResponseCoinData> apiResponseCoinData = new ArrayList<>();
 
