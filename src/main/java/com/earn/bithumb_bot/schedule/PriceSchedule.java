@@ -24,7 +24,7 @@ public class PriceSchedule {
     @Value("${slack.webhook.url}")
     private String webhookUrl;
 
-    @Scheduled(cron = "*/10 * * * * *")
+    @Scheduled(cron = "*/3 * * * * *")
     public void savePrice(){
         String[] targetCoinList = {
                 "BTC","ETH","KLAY","XEC","XTZ","QTUM","OMG","PCI","DOT","WEMIX",
@@ -66,6 +66,6 @@ public class PriceSchedule {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
+
 }
