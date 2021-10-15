@@ -50,7 +50,7 @@ public class PriceSchedule {
                 if(currentInfo.getName().equals(lastInfo.getName())){
                     double diff = currentInfo.getFluctateRate() - lastInfo.getFluctateRate();
                     double roundDiff = Math.round(diff*100)/100.00;
-                    if(roundDiff > 3){
+                    if(roundDiff > 3 && currentInfo.getName().equals("XEC")){
                         sendWebhook(currentInfo.getName()+" :: "+roundDiff);
                     }
                 }
