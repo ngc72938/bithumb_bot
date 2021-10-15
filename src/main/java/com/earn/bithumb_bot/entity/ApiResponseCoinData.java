@@ -4,6 +4,7 @@ package com.earn.bithumb_bot.entity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 
@@ -14,6 +15,7 @@ import javax.persistence.*;
 public class ApiResponseCoinData extends Time{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "coin_data_id")
     private Long id;
 
     private String name;
