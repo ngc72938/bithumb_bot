@@ -29,6 +29,7 @@ public class FetchCoinInfoServiceImpl implements FetchCoinInfoService{
         assert result != null;
         result.getData().setName(coinName);
 
+
         return result;
     }
 
